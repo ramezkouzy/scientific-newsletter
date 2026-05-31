@@ -4,6 +4,8 @@ Scientific Newsletter is an open-source starter kit for clinicians who want a re
 
 It discovers recent papers, removes duplicates, buckets them into your topics, creates a Codex-ready writing prompt, renders HTML email, validates the result, and sends through Gmail SMTP or draft-only mode.
 
+For a detailed explanation of the discovery APIs, exact keyword search shape, Paperclip support, and the Mermaid workflow diagram, see [docs/apis-and-workflow.md](docs/apis-and-workflow.md).
+
 ## Quick Start With Codex
 
 If you have an eligible ChatGPT plan, you can use Codex to work with this repository. Codex can clone/import the GitHub repo, run the setup wizard, inspect the generated files, and help draft each issue.
@@ -96,6 +98,13 @@ Optional discovery keys:
 SEMANTIC_SCHOLAR_API_KEY=...
 PAPERCLIP_API_KEY=...
 ```
+
+Discovery sources:
+
+- PubMed/NCBI E-utilities for peer-reviewed biomedical papers.
+- Semantic Scholar Graph API for broader scholarly search and AI/methods coverage.
+- arXiv API for AI, ML, and computational medicine preprints.
+- Paperclip CLI for broader abstract search plus optional PMC, preprint, regulatory, and trials expansion.
 
 Never commit `.env`.
 

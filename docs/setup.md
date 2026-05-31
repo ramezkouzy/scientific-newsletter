@@ -70,6 +70,15 @@ For Semantic Scholar:
 SEMANTIC_SCHOLAR_API_KEY=...
 ```
 
+For Paperclip, install and authenticate the CLI, or set an API key for non-interactive runs:
+
+```bash
+PAPERCLIP_API_KEY=...
+paperclip config
+```
+
+The config should show that authentication and service health are OK before you rely on Paperclip in a scheduled run.
+
 For Gmail SMTP:
 
 ```bash

@@ -24,7 +24,7 @@ This is not a substitute for clinical judgment. It is an operations layer for li
 The repository includes:
 
 - A first-run setup wizard.
-- PubMed, Semantic Scholar, and arXiv discovery.
+- PubMed, Semantic Scholar, arXiv, and Paperclip discovery.
 - Topic bucketing and duplicate prevention.
 - A Codex-ready prose prompt.
 - HTML email rendering.

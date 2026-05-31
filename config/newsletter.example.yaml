@@ -25,6 +25,7 @@ discovery:
     pubmed: true
     semantic_scholar: true
     arxiv: true
+    paperclip: true
   contact_email: "you@example.com"
 
 quality:
@@ -35,22 +36,26 @@ quality:
 
 topics:
   - name: "Top Papers"
-    keywords: ["randomized", "phase 3", "practice changing", "survival"]
+    keywords: ["randomized", "phase 3", "phase III", "practice changing", "overall survival", "progression-free survival", "hazard ratio", "clinical trial"]
     min_items: 3
     max_items: 3
   - name: "CNS Oncology"
-    keywords: ["brain", "glioma", "glioblastoma", "brain metastases", "spine", "radiosurgery"]
+    keywords: ["brain", "glioma", "glioblastoma", "meningioma", "brain metastases", "PCNSL", "spine", "spinal metastases", "SRS", "radiosurgery", "whole brain radiotherapy", "hippocampal avoidance", "leptomeningeal", "IDH", "MGMT", "neurocognitive"]
     min_items: 2
     max_items: 5
   - name: "Radiation Oncology"
-    keywords: ["radiotherapy", "radiation therapy", "SBRT", "IMRT", "proton", "brachytherapy"]
+    keywords: ["radiotherapy", "radiation therapy", "SBRT", "IMRT", "VMAT", "proton therapy", "brachytherapy", "hypofractionation", "adaptive radiotherapy", "MR-linac", "FLASH radiotherapy", "reirradiation", "auto-segmentation", "treatment planning", "oligometastatic"]
     min_items: 2
     max_items: 5
   - name: "AI in Medicine"
-    keywords: ["artificial intelligence", "machine learning", "deep learning", "large language model", "foundation model"]
+    keywords: ["artificial intelligence", "machine learning", "deep learning", "large language model", "LLM", "foundation model", "retrieval augmented generation", "clinical decision support", "ambient clinical documentation", "AI scribe", "medical imaging foundation model", "radiology report generation", "multimodal medical AI", "AI agent", "AI safety", "FDA artificial intelligence medical device"]
+    min_items: 2
+    max_items: 5
+  - name: "General Oncology"
+    keywords: ["immunotherapy", "checkpoint inhibitor", "CAR-T", "targeted therapy", "chemotherapy", "antibody-drug conjugate", "ADC", "bispecific", "NSCLC", "SCLC", "lung cancer", "breast cancer", "colorectal cancer", "prostate cancer", "melanoma", "lymphoma", "myeloma", "pembrolizumab", "nivolumab", "durvalumab"]
     min_items: 2
     max_items: 5
   - name: "General Medicine"
-    keywords: ["cardiovascular", "diabetes", "infectious disease", "public health", "neuroscience", "vaccine"]
+    keywords: ["cardiovascular", "diabetes", "obesity", "GLP-1", "semaglutide", "tirzepatide", "evolocumab", "infectious disease", "public health", "humanitarian health", "conflict", "forced displacement", "neuroscience", "gene therapy", "CRISPR", "vaccine", "HPV vaccine", "digital medicine oversight"]
     min_items: 2
     max_items: 5

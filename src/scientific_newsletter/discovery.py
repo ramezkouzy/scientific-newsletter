@@ -2,7 +2,10 @@ from __future__ import annotations
 
 import json
 import os
+import re
+import shutil
 import ssl
+import subprocess
 import time
 import urllib.parse
 import urllib.request
@@ -36,6 +39,10 @@ def _user_agent(config: NewsletterConfig) -> str:
 
 def _topic_query(topic: Topic) -> str:
     return " OR ".join(f'"{keyword}"' for keyword in topic.keywords[:8])
+
+
+def _plain_topic_query(topic: Topic, limit: int = 6) -> str:
+    return " ".join(topic.keywords[:limit])
 
 
 def _pubmed_date(article: ET.Element) -> str:
@@ -213,6 +220,117 @@ def search_arxiv(topic: Topic, config: NewsletterConfig) -> List[Dict[str, Any]]
     return papers
 
 
+def strip_ansi(text: str) -> str:
+    return re.sub(r"\x1b\[[0-9;]*m", "", text or "")
+
+
+def paperclip_url_from_record(record: Dict[str, str]) -> str:
+    url = (record.get("url") or "").strip()
+    if url:
+        return url
+    doc_id = str(record.get("id") or "").strip()
+    source = str(record.get("paperclip_source") or "").lower()
+    doi = str(record.get("doi") or "").strip()
+    if doc_id.startswith("PMC"):
+        return f"https://www.ncbi.nlm.nih.gov/pmc/articles/{doc_id}/"
+    if source == "arxiv" or doc_id.startswith(("arx_", "arxiv_")):
+        arxiv_id = re.sub(r"^(arx|arxiv)_", "", doc_id)
+        return f"https://arxiv.org/abs/{arxiv_id}"
+    if doi:
+        return f"https://doi.org/{doi}"
+    return ""
+
+
+def parse_paperclip_output(output: str) -> List[Dict[str, Any]]:
+    """Parse Paperclip's human-readable search results into normalized papers."""
+    text = strip_ansi(output)
+    entries = re.split(r"\n(?=\s+\d+\.\s)", text)
+    papers: List[Dict[str, Any]] = []
+    for entry in entries:
+        lines = [line.rstrip() for line in entry.splitlines() if line.strip()]
+        if not lines:
+            continue
+        match = re.match(r"\s*(\d+)\.\s+(.+)", lines[0])
+        if not match:
+            continue
+        record: Dict[str, str] = {"title": match.group(2).strip()}
+        for raw_line in lines[1:]:
+            line = raw_line.strip()
+            if (
+                line.startswith("[")
+                or line.startswith(("Found ", "Tip:"))
+                or "saved to" in line
+                or "Search ID:" in line
+                or line == "No documents found"
+            ):
+                continue
+            if line.startswith(("https://", "http://")):
+                record["url"] = line
+            elif line.startswith("doi:"):
+                record["doi"] = line[4:].strip()
+            elif line.startswith('"') and line.endswith('"'):
+                record["abstract"] = line.strip('"')
+            elif "·" in line:
+                parts = [part.strip() for part in line.split("·")]
+                if parts:
+                    record["id"] = parts[0]
+                if len(parts) >= 2:
+                    record["paperclip_source"] = parts[1]
+                if len(parts) >= 3:
+                    record["published"] = parts[2]
+            elif "authors" not in record:
+                record["authors"] = line
+        title = record.get("title", "")
+        if not title:
+            continue
+        source_label = record.get("paperclip_source") or "Paperclip"
+        papers.append(
+            {
+                "title": title,
+                "original_title": title,
+                "abstract": record.get("abstract", ""),
+                "journal": source_label,
+                "doi": record.get("doi") or "",
+                "url": paperclip_url_from_record(record),
+                "published": record.get("published", ""),
+                "authors": [record["authors"]] if record.get("authors") else [],
+                "source": "Paperclip",
+                "paperclip_id": record.get("id", ""),
+            }
+        )
+    return papers
+
+
+def search_paperclip(topic: Topic, config: NewsletterConfig, *, source: str = "abstracts") -> List[Dict[str, Any]]:
+    """Search Paperclip when installed/authenticated; otherwise continue quietly."""
+    binary = shutil.which("paperclip")
+    if not binary:
+        return []
+    days_back = int(config.discovery.get("days_back", 7))
+    max_results = min(int(config.discovery.get("max_results_per_topic", 20)), 25)
+    cmd = [
+        binary,
+        "--no-repo",
+        "search",
+        "-s",
+        source,
+        _plain_topic_query(topic),
+        "-n",
+        str(max_results),
+        "--since",
+        f"{days_back}d",
+        "--sort",
+        "date",
+    ]
+    try:
+        result = subprocess.run(cmd, capture_output=True, text=True, timeout=90)
+    except (OSError, subprocess.TimeoutExpired):
+        return []
+    if result.returncode != 0:
+        return []
+    return parse_paperclip_output(result.stdout)
+
+
 def discover(config: NewsletterConfig) -> List[Dict[str, Any]]:
     sources = config.discovery.get("sources", {})
     papers: List[Dict[str, Any]] = []
@@ -239,4 +357,11 @@ def discover(config: NewsletterConfig) -> List[Dict[str, Any]]:
                 time.sleep(3.0)
             except Exception as exc:
                 papers.append({"title": f"arXiv search failed for {topic.name}", "error": str(exc), "source": "arXiv"})
+        if sources.get("paperclip", True):
+            try:
+                papers.extend(search_paperclip(topic, config, source="abstracts"))
+                if any("ai" in keyword.lower() or "machine" in keyword.lower() for keyword in topic.keywords):
+                    papers.extend(search_paperclip(topic, config, source="arxiv"))
+            except Exception as exc:
+                papers.append({"title": f"Paperclip search failed for {topic.name}", "error": str(exc), "source": "Paperclip"})
     return [paper for paper in deduplicate_papers(papers) if not paper.get("error")]

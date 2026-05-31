@@ -48,9 +48,10 @@ discovery:
     pubmed: true
     semantic_scholar: true
     arxiv: true
+    paperclip: true
 ```
 
-PubMed works without a key. Semantic Scholar works without a key but benefits from `SEMANTIC_SCHOLAR_API_KEY`. arXiv is useful for AI-heavy newsletters.
+PubMed works without a key. Semantic Scholar works without a key but benefits from `SEMANTIC_SCHOLAR_API_KEY`. arXiv is useful for AI-heavy newsletters. Paperclip is useful for broader abstract search, full-text-adjacent search, preprints, and advanced expansion into FDA or clinical-trial documents.
 
 ## Quality Strictness
 
