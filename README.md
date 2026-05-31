@@ -1,6 +1,6 @@
 # Scientific Newsletter
 
-Scientific Newsletter is an open-source starter kit for clinicians who want a recurring research digest without building a newsletter pipeline from scratch.
+Scientific Newsletter is an open-source starter kit for clinicians/researchers who want a recurring research digest without building a newsletter pipeline from scratch.
 
 It discovers recent papers, removes duplicates, buckets them into your topics, creates a Codex-ready writing prompt, renders HTML email, validates the result, and sends through Gmail SMTP or draft-only mode.
 
