@@ -6,6 +6,14 @@ It discovers recent papers, removes duplicates, buckets them into your topics, c
 
 For a detailed explanation of the discovery APIs, exact keyword search shape, Paperclip support, and the Mermaid workflow diagram, see [docs/apis-and-workflow.md](docs/apis-and-workflow.md). For API-key setup, see [docs/api-keys.md](docs/api-keys.md). For a visual preview, open [examples/example-newsletter.html](examples/example-newsletter.html).
 
+![Automated Scientific Newsletter Workflow](docs/images/scientific-newsletter-workflow.png)
+
+## Preview
+
+The project renders HTML and plaintext email. This example shows the output style from an earlier internal newsletter; your fork can use a more formal, concise, or specialty-specific format.
+
+![Example Scientific Newsletter Output](docs/images/example-newsletter-output.png)
+
 ## Quick Start With Codex
 
 If you have an eligible ChatGPT plan, you can use Codex to work with this repository. Codex can clone/import the GitHub repo, run the setup wizard, inspect the generated files, and help draft each issue.
