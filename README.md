@@ -4,7 +4,7 @@ Scientific Newsletter is an open-source starter kit for clinicians who want a re
 
 It discovers recent papers, removes duplicates, buckets them into your topics, creates a Codex-ready writing prompt, renders HTML email, validates the result, and sends through Gmail SMTP or draft-only mode.
 
-For a detailed explanation of the discovery APIs, exact keyword search shape, Paperclip support, and the Mermaid workflow diagram, see [docs/apis-and-workflow.md](docs/apis-and-workflow.md). For API-key setup, see [docs/api-keys.md](docs/api-keys.md). For a visual preview, open [examples/example-newsletter.html](examples/example-newsletter.html).
+For a detailed explanation of the discovery APIs, exact keyword search shape, Paperclip support, and the Mermaid workflow diagram, see [docs/apis-and-workflow.md](docs/apis-and-workflow.md). For API-key setup, see [docs/api-keys.md](docs/api-keys.md). For a BeamPath-ready walkthrough with screenshots, see [docs/beampath-step-by-step.md](docs/beampath-step-by-step.md). For a visual preview, open [examples/example-newsletter.html](examples/example-newsletter.html).
 
 ## Quick Start With Codex
 
@@ -47,7 +47,7 @@ Official references:
 You need Python 3.9 or newer.
 
 ```bash
-git clone https://github.com/YOUR-ORG/scientific-newsletter.git
+git clone https://github.com/ramezkouzy/scientific-newsletter.git
 cd scientific-newsletter
 python3 -m venv .venv
 source .venv/bin/activate
@@ -89,7 +89,7 @@ Using Codex through ChatGPT does not require an OpenAI API key for the basic wor
 4. Put it in `.env`:
 
 ```bash
-OPENAI_API_KEY=sk-...
+OPENAI_API_KEY=replace_with_your_openai_key
 ```
 
 Optional discovery keys:

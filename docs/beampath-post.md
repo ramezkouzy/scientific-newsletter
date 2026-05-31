@@ -35,7 +35,7 @@ The repository includes:
 Suggested first workflow:
 
 ```bash
-git clone https://github.com/YOUR-ORG/scientific-newsletter.git
+git clone https://github.com/ramezkouzy/scientific-newsletter.git
 cd scientific-newsletter
 python3 -m venv .venv
 source .venv/bin/activate
@@ -57,8 +57,9 @@ The project is designed for people who would rather spend their limited attentio
 
 Links to include before publishing:
 
-- GitHub repo: `https://github.com/YOUR-ORG/scientific-newsletter`
-- README: `https://github.com/YOUR-ORG/scientific-newsletter#readme`
+- GitHub repo: `https://github.com/ramezkouzy/scientific-newsletter`
+- README: `https://github.com/ramezkouzy/scientific-newsletter#readme`
+- Step-by-step guide with screenshots: `docs/beampath-step-by-step.md`
 - Codex with ChatGPT plans: `https://help.openai.com/en/articles/11369540-using-codex-with-your-chatgpt-plan`
 - OpenAI API quickstart: `https://platform.openai.com/docs/quickstart`
 - Gmail app passwords: `https://myaccount.google.com/apppasswords`

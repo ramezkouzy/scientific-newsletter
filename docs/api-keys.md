@@ -30,7 +30,7 @@ deduplicates records, and prepares a human-reviewed research digest.
 7. Add the key to `.env`:
 
 ```bash
-SEMANTIC_SCHOLAR_API_KEY=your_key_here
+SEMANTIC_SCHOLAR_API_KEY=replace_with_your_semantic_scholar_key
 ```
 
 8. Test that the key is loaded:
@@ -125,13 +125,13 @@ paperclip config
 Non-interactive scheduled run:
 
 ```bash
-PAPERCLIP_API_KEY=pk_...
+PAPERCLIP_API_KEY=replace_with_your_paperclip_key
 ```
 
 Put it in `.env`:
 
 ```bash
-PAPERCLIP_API_KEY=pk_...
+PAPERCLIP_API_KEY=replace_with_your_paperclip_key
 ```
 
 ### Test Paperclip Searches

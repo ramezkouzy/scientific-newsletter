@@ -7,7 +7,7 @@ This guide walks through the first run from a blank machine to a preview newslet
 Use GitHub and Codex if you have access through ChatGPT, or clone locally:
 
 ```bash
-git clone https://github.com/YOUR-ORG/scientific-newsletter.git
+git clone https://github.com/ramezkouzy/scientific-newsletter.git
 cd scientific-newsletter
 ```
 
@@ -61,7 +61,7 @@ For OpenAI API access:
 4. Paste it into `.env`.
 
 ```bash
-OPENAI_API_KEY=sk-...
+OPENAI_API_KEY=replace_with_your_openai_key
 ```
 
 For Semantic Scholar, request a key from the official Semantic Scholar API page and put it in `.env`:
