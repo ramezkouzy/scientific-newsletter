@@ -64,11 +64,13 @@ For OpenAI API access:
 OPENAI_API_KEY=sk-...
 ```
 
-For Semantic Scholar:
+For Semantic Scholar, request a key from the official Semantic Scholar API page and put it in `.env`:
 
 ```bash
 SEMANTIC_SCHOLAR_API_KEY=...
 ```
+
+Detailed instructions are in [api-keys.md](api-keys.md#semantic-scholar-api-key).
 
 For Paperclip, install and authenticate the CLI, or set an API key for non-interactive runs:
 
@@ -78,6 +80,8 @@ paperclip config
 ```
 
 The config should show that authentication and service health are OK before you rely on Paperclip in a scheduled run.
+
+Detailed instructions are in [api-keys.md](api-keys.md#paperclip-setup).
 
 For Gmail SMTP:
 

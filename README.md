@@ -4,7 +4,7 @@ Scientific Newsletter is an open-source starter kit for clinicians who want a re
 
 It discovers recent papers, removes duplicates, buckets them into your topics, creates a Codex-ready writing prompt, renders HTML email, validates the result, and sends through Gmail SMTP or draft-only mode.
 
-For a detailed explanation of the discovery APIs, exact keyword search shape, Paperclip support, and the Mermaid workflow diagram, see [docs/apis-and-workflow.md](docs/apis-and-workflow.md).
+For a detailed explanation of the discovery APIs, exact keyword search shape, Paperclip support, and the Mermaid workflow diagram, see [docs/apis-and-workflow.md](docs/apis-and-workflow.md). For API-key setup, see [docs/api-keys.md](docs/api-keys.md). For a visual preview, open [examples/example-newsletter.html](examples/example-newsletter.html).
 
 ## Quick Start With Codex
 
@@ -98,6 +98,11 @@ Optional discovery keys:
 SEMANTIC_SCHOLAR_API_KEY=...
 PAPERCLIP_API_KEY=...
 ```
+
+Detailed setup:
+
+- Semantic Scholar key request and usage: [docs/api-keys.md](docs/api-keys.md#semantic-scholar-api-key)
+- Paperclip install, login, and API-key setup: [docs/api-keys.md](docs/api-keys.md#paperclip-setup)
 
 Discovery sources:
 

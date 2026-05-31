@@ -70,6 +70,7 @@ Relevant public docs:
 - Semantic Scholar API: https://api.semanticscholar.org/api-docs/graph
 - arXiv API user manual: https://info.arxiv.org/help/api/user-manual.html
 - Paperclip CLI help: run `paperclip --help` and `paperclip search -s pmc --help`
+- Detailed API-key setup: [api-keys.md](api-keys.md)
 
 ## Exact Query Shape
 
