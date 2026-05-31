@@ -1,0 +1,56 @@
+newsletter:
+  name: "Scientific Newsletter"
+  description: "A clinician-curated digest of new scientific papers."
+  audience: "Clinicians and scientists"
+  tone: "Clear, concise, clinically useful, with no hype."
+  timezone: "America/Chicago"
+
+schedule:
+  frequency: "weekly"
+  weekdays: ["Tuesday"]
+  time: "06:00"
+
+email:
+  mode: "draft_only"
+  sender_email: "your.name@gmail.com"
+  sender_name: "Scientific Newsletter"
+  test_recipient: "you@example.com"
+  recipients: []
+  review_before_send: true
+
+discovery:
+  days_back: 7
+  max_results_per_topic: 20
+  sources:
+    pubmed: true
+    semantic_scholar: true
+    arxiv: true
+  contact_email: "you@example.com"
+
+quality:
+  require_links: true
+  require_result_data: true
+  minimum_total_papers: 5
+  rapid_fire_max: 8
+
+topics:
+  - name: "Top Papers"
+    keywords: ["randomized", "phase 3", "practice changing", "survival"]
+    min_items: 3
+    max_items: 3
+  - name: "CNS Oncology"
+    keywords: ["brain", "glioma", "glioblastoma", "brain metastases", "spine", "radiosurgery"]
+    min_items: 2
+    max_items: 5
+  - name: "Radiation Oncology"
+    keywords: ["radiotherapy", "radiation therapy", "SBRT", "IMRT", "proton", "brachytherapy"]
+    min_items: 2
+    max_items: 5
+  - name: "AI in Medicine"
+    keywords: ["artificial intelligence", "machine learning", "deep learning", "large language model", "foundation model"]
+    min_items: 2
+    max_items: 5
+  - name: "General Medicine"
+    keywords: ["cardiovascular", "diabetes", "infectious disease", "public health", "neuroscience", "vaccine"]
+    min_items: 2
+    max_items: 5

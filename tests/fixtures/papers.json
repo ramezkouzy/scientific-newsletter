@@ -1,0 +1,90 @@
+[
+  {
+    "title": "Randomized Phase 3 Trial of Radiosurgery for Brain Metastases",
+    "original_title": "Randomized Phase 3 Trial of Radiosurgery for Brain Metastases",
+    "abstract": "In this randomized phase 3 trial, N=420 patients with brain metastases were assigned to radiosurgery or whole-brain radiotherapy. Overall survival HR 0.82 (95% CI 0.70-0.96) and cognitive decline was 18% lower.",
+    "journal": "New England Journal of Medicine",
+    "doi": "10.0001/brain-radiosurgery",
+    "url": "https://example.org/brain-radiosurgery",
+    "published": "2026-05-20",
+    "authors": ["Smith J"],
+    "source": "fixture"
+  },
+  {
+    "title": "Machine Learning Model for Radiotherapy Toxicity Prediction",
+    "original_title": "Machine Learning Model for Radiotherapy Toxicity Prediction",
+    "abstract": "A multicenter model trained on 12,000 patients predicted grade 2 toxicity with AUC=0.86 and calibration slope of 0.94.",
+    "journal": "Lancet Digital Health",
+    "doi": "10.0001/ml-toxicity",
+    "url": "https://example.org/ml-toxicity",
+    "published": "2026-05-21",
+    "authors": ["Patel R"],
+    "source": "fixture"
+  },
+  {
+    "title": "Proton Therapy Versus IMRT for Head and Neck Cancer",
+    "original_title": "Proton Therapy Versus IMRT for Head and Neck Cancer",
+    "abstract": "N=310 patients were treated with proton therapy or IMRT. Grade 3 xerostomia was 9% versus 19%, p=0.01.",
+    "journal": "Journal of Clinical Oncology",
+    "doi": "10.0001/proton-imrt",
+    "url": "https://example.org/proton-imrt",
+    "published": "2026-05-21",
+    "authors": ["Lee A"],
+    "source": "fixture"
+  },
+  {
+    "title": "GLP-1 Receptor Agonist and Heart Failure Outcomes",
+    "original_title": "GLP-1 Receptor Agonist and Heart Failure Outcomes",
+    "abstract": "A randomized trial of 3,100 participants found hospitalization for heart failure was reduced, HR 0.76 (95% CI 0.61-0.95).",
+    "journal": "JAMA",
+    "doi": "10.0001/glp-heart-failure",
+    "url": "https://example.org/glp-heart-failure",
+    "published": "2026-05-22",
+    "authors": ["Garcia M"],
+    "source": "fixture"
+  },
+  {
+    "title": "Large Language Models for Clinical Trial Matching",
+    "original_title": "Large Language Models for Clinical Trial Matching",
+    "abstract": "The foundation model matched patients to trials with sensitivity 91% and specificity 84% across 2,400 cases.",
+    "journal": "Nature Medicine",
+    "doi": "10.0001/llm-trial-matching",
+    "url": "https://example.org/llm-trial-matching",
+    "published": "2026-05-22",
+    "authors": ["Nguyen T"],
+    "source": "fixture"
+  },
+  {
+    "title": "Hypofractionated Radiotherapy for Localized Prostate Cancer",
+    "original_title": "Hypofractionated Radiotherapy for Localized Prostate Cancer",
+    "abstract": "N=860 patients received hypofractionated radiotherapy or conventional treatment; biochemical control was 92% versus 90%.",
+    "journal": "Radiotherapy and Oncology",
+    "doi": "10.0001/hypofractionated-prostate",
+    "url": "https://example.org/hypofractionated-prostate",
+    "published": "2026-05-23",
+    "authors": ["Brown K"],
+    "source": "fixture"
+  },
+  {
+    "title": "Glioblastoma Adaptive Radiotherapy Planning Study",
+    "original_title": "Glioblastoma Adaptive Radiotherapy Planning Study",
+    "abstract": "Among 144 patients with glioblastoma, adaptive radiotherapy reduced normal brain V30 by 12% while maintaining target coverage.",
+    "journal": "Neuro-Oncology",
+    "doi": "10.0001/gbm-adaptive-rt",
+    "url": "https://example.org/gbm-adaptive-rt",
+    "published": "2026-05-24",
+    "authors": ["Chen Y"],
+    "source": "fixture"
+  },
+  {
+    "title": "Influenza Vaccine Effectiveness in Older Adults",
+    "original_title": "Influenza Vaccine Effectiveness in Older Adults",
+    "abstract": "A public health study of 88,000 participants found vaccine effectiveness was 48% against hospitalization.",
+    "journal": "Clinical Infectious Diseases",
+    "doi": "10.0001/influenza-vaccine",
+    "url": "https://example.org/influenza-vaccine",
+    "published": "2026-05-24",
+    "authors": ["Ahmed S"],
+    "source": "fixture"
+  }
+]
